@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <color name="inactive_color">#ffffff</color>
+   <color name="active_color">#4ECDC4</color>
+   <color name="layout_background_color">#222222</color>
+   <color name="layout_border_color">#000000</color>
+   <color name="devider_color">#ffeeee</color>
+</resources>

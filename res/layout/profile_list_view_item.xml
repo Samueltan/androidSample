@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+	<ImageView android:id="@+id/profile_list_item"
+               android:minHeight="240dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="fitXY"/>
+    <RelativeLayout 
+        	android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minHeight="240dp">
+	   	
+	   	<TextView android:id="@+id/profile_iswinner"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	        	android:layout_alignParentLeft="true"
+	        	android:layout_marginLeft="2dp"
+	        	android:layout_marginTop="3dp"
+	            android:textColor="#fffeee"
+	            android:textSize="20sp" 
+	            android:text="@string/fa_trophy"/>
+	   	
+	   	<RatingBar
+        	android:id="@+id/profile_ratingBar"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentRight="true"
+        	android:layout_alignParentTop="true"/>
+	   	
+	   	<TextView android:id="@+id/profile_quest_decription"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	        	android:layout_alignParentLeft="true"
+	        	android:layout_alignParentBottom="true"
+	        	android:layout_marginLeft="2dp"
+	        	android:layout_marginTop="3dp"
+	            android:textColor="#fffeee"
+	            android:textSize="20sp"/>
+	   	
+	   	
+    </RelativeLayout>
+        
+
+</FrameLayout>

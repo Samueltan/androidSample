@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.overture.questdroid" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+	<RelativeLayout 
+	    android:layout_width="match_parent"			
+	    android:layout_height="36dp" 
+	    android:id="@+id/profile_header" >
+	     <!-- icon -->	
+    	<TextView
+       		android:id="@+id/profile_setting_icon"
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:layout_alignParentLeft="true"
+       		android:text="@string/fa_gear"
+       		android:textSize="20sp"
+       		android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/profile_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" 
+            android:textSize="25sp"/>
+
+	</RelativeLayout>
+	
+	<LinearLayout 
+	    android:id="@+id/profile_reward_btn"
+	    android:orientation="horizontal"  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/profile_header"  
+        android:layout_marginLeft="5dp" 
+        android:layout_marginRight="5dp">  
+
+        <com.overture.questdroid.utility.TabButton
+            android:id="@+id/btn_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30sp"
+            android:layout_weight="1"
+            android:background="#AAAAAA"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="My Profile" 
+            />
+  
+        <com.overture.questdroid.utility.TabButton
+            android:id="@+id/btn_reward"
+            android:layout_width="wrap_content"
+            android:layout_height="30sp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:background="#000000"
+            android:textColor="#FFFFFF"
+            android:text="My Rewards" />
+ 
+     </LinearLayout>
+      
+	 <RelativeLayout 
+	     android:layout_below="@id/profile_reward_btn"
+	     android:id="@+id/profile_detail"
+		 android:layout_width="match_parent"
+		 android:layout_height="80dp">
+	     <ImageView
+	        android:layout_centerVertical="true"
+            android:id="@+id/profile_usr_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp"
+            android:scaleType="fitCenter"
+	        android:layout_gravity="center"/>
+		<RelativeLayout 
+		    android:layout_toRightOf="@id/profile_usr_avatar"
+		    android:layout_marginLeft="10dp"
+		    android:layout_centerVertical="true"
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+		     <TextView
+		         android:id="@+id/profile_usrname"					
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:textStyle="bold"
+		         android:text="TextView" />
+	
+		     <TextView
+		         android:id="@+id/profile_total_earned"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:layout_below="@id/profile_usrname"
+		         android:text="TextView" />
+		   	 
+		     <!-- icon -->
+		   	 <TextView
+		   	     	android:id="@+id/profile_coin_icon1"				
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/fa_coin"
+		            android:layout_toRightOf="@id/profile_total_earned"
+		            android:layout_marginLeft="5dp"
+		            android:layout_below="@id/profile_usrname"
+		        	android:paddingTop="3dp"
+		            android:textColor="#fff000" >
+		     </TextView>
+		     
+		     <TextView
+		         android:id="@+id/profile_available_coin"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:layout_below="@id/profile_total_earned"
+		         android:text="TextView" />
+		   	 
+		   	<!-- icon -->
+		     <TextView
+		   	     	android:id="@+id/profile_coin_icon2"				
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/fa_coin"
+		            android:layout_marginLeft="5dp"
+		            android:layout_below="@id/profile_total_earned"
+		        	android:layout_toRightOf="@id/profile_available_coin"
+		        	android:paddingTop="3dp"
+		            android:textColor="#fff000" >
+		     </TextView>
+		     <TextView
+	   	     	android:id="@+id/profile_star_icon"				
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/fa_rate"
+	            android:layout_marginTop="3dp"
+				android:layout_alignParentRight="true"
+	            android:textColor="#fff000" />
+		     <TextView
+	         android:id="@+id/profile_average_star"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_toLeftOf="@id/profile_star_icon"
+	   		 />
+		</RelativeLayout>
+
+		
+	   	 
+
+	 </RelativeLayout>
+	<RelativeLayout android:id="@+id/profile_func_btn"
+	    	android:orientation="horizontal"  
+        	android:layout_width="fill_parent"  
+        	android:layout_height="wrap_content"
+        	android:layout_below="@id/profile_detail"  
+        	android:layout_marginLeft="5dp" 
+        	android:layout_marginRight="5dp">
+	    
+	    <!-- icon -->
+	    <TextView
+	        	android:id="@+id/profile_toggle_icon"
+	            android:layout_width="wrap_content"				
+	            android:layout_height="wrap_content"
+	            android:text="@string/fa_sort"
+				android:textSize="20sp"
+	        	android:layout_centerVertical="true"
+	        	android:layout_alignParentLeft="true"
+	            android:textColor="#fff000" />
+	            
+	    <TextView 
+	        	android:layout_width="wrap_content"				
+	            android:layout_height="wrap_content"
+	            android:textSize="20sp"
+	        	android:layout_centerVertical="true"
+	            android:layout_toRightOf="@id/profile_toggle_icon"
+	            android:text="MY PHOTOS"/>
+	    
+	    <!-- icon -->
+	    <TextView
+	        	android:id="@+id/profile_grid_icon"
+	            android:layout_width="wrap_content"				
+	            android:layout_height="wrap_content"
+	            android:text="@string/fa_th_list"
+	        	android:layout_alignParentRight="true"
+	            android:textColor="#ffffff" 
+	            android:textSize="20sp"/>
+	    
+	</RelativeLayout>
+	
+	<ListView
+        android:id="@+id/profile_img_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_below="@id/profile_func_btn"/>
+	
+    <!--FrameLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="36dp" >
+        <ImageView
+            android:id="@+id/iv_title_contests"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="2dp"
+            android:scaleType="fitCenter"
+	        android:layout_gravity="center"
+            android:src="@drawable/title_contests" />
+        
+	    <RelativeLayout
+	        android:id="@+id/layout_title"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" 
+	        android:gravity="center_vertical">
+	        <TextView
+	            android:id="@+id/icon_user_coin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/fa_coin"
+	        	android:layout_alignParentRight="true"
+	        	android:paddingTop="3dp"
+	            android:textColor="#fff000" />
+	        <TextView
+	            android:id="@+id/tv_user_coin_amount"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	        	android:layout_toLeftOf="@id/icon_user_coin"
+	        	android:layout_marginRight="3dp"
+	            android:textColor="#fff000" />
+
+	    </RelativeLayout>
+	</FrameLayout-->
+
+
+
+</RelativeLayout>
