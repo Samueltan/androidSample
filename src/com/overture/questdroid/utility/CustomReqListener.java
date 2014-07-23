@@ -147,64 +147,64 @@ public class CustomReqListener {
         };
     }
 	
-	public static Response.Listener<JSONObject> successListenerGlobalList(final Fragment fragment) {
-		
-		return new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                	VolleyController.getInstance().globalList = response;
-                	JSONArray contentArr = VolleyController.getInstance().globalList.optJSONArray("content");
-        
-                	for(int i=0; i<contentArr.length(); ++i){
-                		JSONObject content = contentArr.optJSONObject(i);
-                		
-                		// Get overview information
-                    	String cashValue = content.optString("cashValue");
-                    	String winnerReward = content.optString("winnerReward");
-                    	String contestName = content.optString("name");
-                    	String contestCoin = content.optString("winnerCoin");
-                    	String beginDate = longToDayCounts(content.optLong("beginDate"));
-                    	String Collabration = content.optString("collaborationTotal");
-                    	
-                		JSONObject topfav = content.optJSONObject("topFavorQuestMedia");
-                		String imgUrl = "";
-                		if(topfav!=null)
-                			imgUrl = topfav.optString("objectSignedUrl");
-                		
-                    	// Get detailed information
-                    	int winnerNums = Integer.parseInt(content.optString("winnerNums"));
-                    	String strWinnerNums = "Up to " + winnerNums + " Possible Winner";
-                    	if(winnerNums > 1) strWinnerNums += "s";
-                    	String rectBanner = imgUrl;		// To be updated!
-                    	String description = content.optString("description");
-                    	
-                    	String fragmentType = fragment.getClass().getSimpleName();
-                        if (fragmentType.equals("ContestsFragment")) {
-                        	ContestsFragment cFragment = (ContestsFragment)fragment;
-                        	ItemRow row = new ItemRow(imgUrl, cashValue, winnerReward, contestName, 
-                        			contestCoin, beginDate, Collabration,
-                        			rectBanner, strWinnerNums, description);
-                        	cFragment.injectListData(row);
-                        }else if (fragmentType.equals("RateFragment")) {
-                        	// Todo
-                        }else if (fragmentType.equals("MarketFragment")) {
-                        	// Todo
-                        }else if (fragmentType.equals("ActivityFragment")) {
-                        	// Todo
-                        }else if (fragmentType.equals("ProfileFragment")) {
-                        	// Todo
-                        }
-                	}
-                	
-                	
-                } catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-        };
-    }
+//	public static Response.Listener<JSONObject> successListenerGlobalList(final Fragment fragment) {
+//		
+//		return new Response.Listener<JSONObject>() {
+//            @Override
+//            public void onResponse(JSONObject response) {
+//                try {
+//                	VolleyController.getInstance().globalList = response;
+//                	JSONArray contentArr = VolleyController.getInstance().globalList.optJSONArray("content");
+//        
+//                	for(int i=0; i<contentArr.length(); ++i){
+//                		JSONObject content = contentArr.optJSONObject(i);
+//                		
+//                		// Get overview information
+//                    	String cashValue = content.optString("cashValue");
+//                    	String winnerReward = content.optString("winnerReward");
+//                    	String contestName = content.optString("name");
+//                    	String contestCoin = content.optString("winnerCoin");
+//                    	String beginDate = longToDayCounts(content.optLong("beginDate"));
+//                    	String Collabration = content.optString("collaborationTotal");
+//                    	
+//                		JSONObject topfav = content.optJSONObject("topFavorQuestMedia");
+//                		String imgUrl = "";
+//                		if(topfav!=null)
+//                			imgUrl = topfav.optString("objectSignedUrl");
+//                		
+//                    	// Get detailed information
+//                    	int winnerNums = Integer.parseInt(content.optString("winnerNums"));
+//                    	String strWinnerNums = "Up to " + winnerNums + " Possible Winner";
+//                    	if(winnerNums > 1) strWinnerNums += "s";
+//                    	String rectBanner = imgUrl;		// To be updated!
+//                    	String description = content.optString("description");
+//                    	
+//                    	String fragmentType = fragment.getClass().getSimpleName();
+//                        if (fragmentType.equals("ContestsFragment")) {
+//                        	ContestsFragment cFragment = (ContestsFragment)fragment;
+//                        	ItemRow row = new ItemRow(imgUrl, cashValue, winnerReward, contestName, 
+//                        			contestCoin, beginDate, Collabration,
+//                        			rectBanner, strWinnerNums, description);
+//                        	cFragment.injectListData(row);
+//                        }else if (fragmentType.equals("RateFragment")) {
+//                        	// Todo
+//                        }else if (fragmentType.equals("MarketFragment")) {
+//                        	// Todo
+//                        }else if (fragmentType.equals("ActivityFragment")) {
+//                        	// Todo
+//                        }else if (fragmentType.equals("ProfileFragment")) {
+//                        	// Todo
+//                        }
+//                	}
+//                	
+//                	
+//                } catch (Exception e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//            }
+//        };
+//    }
 	
 	/**
 	 * Function to convert the date long to a valid day count number

@@ -1,4 +1,4 @@
-package com.overture.questdroid;
+package com.overture.questdroid.utility;
 
 import android.content.Context;
 import com.lidroid.xutils.BitmapUtils;

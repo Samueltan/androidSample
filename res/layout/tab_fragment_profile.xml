@@ -66,14 +66,15 @@
 	     android:id="@+id/profile_detail"
 		 android:layout_width="match_parent"
 		 android:layout_height="80dp">
-	     <ImageView
+	     <com.overture.questdroid.utility.CircleImageView
+	        xmlns:app="http://schemas.android.com/apk/res-auto"
 	        android:layout_centerVertical="true"
             android:id="@+id/profile_usr_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="3dp"
-            android:scaleType="fitCenter"
-	        android:layout_gravity="center"/>
+	        android:layout_gravity="center"
+	        app:border_width="1dp"
+    		app:border_color="#FF000000"/>
 		<RelativeLayout 
 		    android:layout_toRightOf="@id/profile_usr_avatar"
 		    android:layout_marginLeft="10dp"
@@ -155,7 +156,7 @@
         	android:layout_marginRight="5dp">
 	    
 	    <!-- icon -->
-	    <TextView
+	    <Button
 	        	android:id="@+id/profile_toggle_icon"
 	            android:layout_width="wrap_content"				
 	            android:layout_height="wrap_content"
@@ -174,7 +175,7 @@
 	            android:text="MY PHOTOS"/>
 	    
 	    <!-- icon -->
-	    <TextView
+	    <Button
 	        	android:id="@+id/profile_grid_icon"
 	            android:layout_width="wrap_content"				
 	            android:layout_height="wrap_content"
@@ -190,44 +191,26 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" 
         android:layout_below="@id/profile_func_btn"/>
-	
-    <!--FrameLayout
-        android:id="@+id/layout_title"
-        android:layout_width="match_parent"
-        android:layout_height="36dp" >
-        <ImageView
-            android:id="@+id/iv_title_contests"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="2dp"
-            android:scaleType="fitCenter"
-	        android:layout_gravity="center"
-            android:src="@drawable/title_contests" />
-        
-	    <RelativeLayout
-	        android:id="@+id/layout_title"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent" 
-	        android:gravity="center_vertical">
-	        <TextView
-	            android:id="@+id/icon_user_coin"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="@string/fa_coin"
-	        	android:layout_alignParentRight="true"
-	        	android:paddingTop="3dp"
-	            android:textColor="#fff000" />
-	        <TextView
-	            android:id="@+id/tv_user_coin_amount"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	        	android:layout_toLeftOf="@id/icon_user_coin"
-	        	android:layout_marginRight="3dp"
-	            android:textColor="#fff000" />
 
-	    </RelativeLayout>
-	</FrameLayout-->
-
-
+	<com.overture.questdroid.utility.OptimizeGridView
+        android:id="@+id/profile_img_grid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/profile_func_btn"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/gridMarginTopLeft"
+        android:layout_marginRight="@dimen/gridMarginBottomRight"
+        android:layout_marginTop="@dimen/gridMarginTopLeft"
+        android:layout_marginBottom="@dimen/gridMarginBottomRight"
+        android:columnWidth="@dimen/itemSize"
+        android:gravity="center"
+        android:listSelector="@android:color/transparent"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"
+        android:numColumns="auto_fit"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:stretchMode="columnWidth"
+        />
 
 </RelativeLayout>

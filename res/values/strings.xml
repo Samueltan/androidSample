@@ -25,7 +25,12 @@
     
     <!-- API URL -->
     <string name="api_getUser">https://test.snaapiq.com/api2/user</string>
-    <!--  string name="api_getGlobalList">https://test.snaapiq.com/api2/quest?minStatus=2&maxStatus=2</string>-->
+    <string name="api_login">https://test.snaapiq.com/api2/user/login.json</string>
+    <string name="api_getImageLocalList">https://test.snaapiq.com/api2/quest/local?minStatus=%1$s&amp;maxStatus=%1$s&amp;date=%2$s&amp;page.page=%3$s&amp;latitude=%4$s&amp;longitude=%5$s</string>
+    <string name="api_getImageGlobalList">https://test.snaapiq.com/api2/quest?minStatus=%1$s&amp;maxStatus=%1$s&amp;date=%2$s&amp;page.page=%3$s</string>
+    <!-- Messages -->
+    <string name="warn_unknownLoginFailure">Unable to login for unknown reason</string>
+    <string name="warn_invalidCookie">The cookie that received is invalid</string>
     
     <!-- Fontawesome icon mapping -->
     <string name="fa_contests">&#xf091;</string>	<!-- Contests icon -->
@@ -42,6 +47,7 @@
     <string name="fa_map_mark">&#xf041;</string>  
     <string name="fa_camera">&#xf030;</string>
     <string name="fa_trophy">&#xf091;</string> 		<!-- profile iswinner -->
-    <string name="fa_gear">&#xf013;</string>		
+    <string name="fa_gear">&#xf013;</string>
+    <string name="fa_info_circle">&#xf05a;</string>
     
 </resources>

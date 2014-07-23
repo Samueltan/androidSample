@@ -1,234 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-    
-	<RelativeLayout
-		android:id="@+id/img_backView"
-        android:tag="backView"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:minHeight="240dp">
-		<RelativeLayout
-			android:id="@+id/img_detailsView"
-	        android:tag="backView"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:minHeight="240dp">
-		 	    <!-- Contest Details: Contest Name -->	
-		 	    <TextView
-		 	        android:id="@+id/tv_contestName2"
-		 	        android:layout_width="wrap_content"
-		 	        android:layout_height="60dp"
-		 	        android:layout_alignParentLeft="true"
-		 	        android:layout_marginLeft="5dp"
-		 	        android:paddingTop="3dp"
-		 	        android:textColor="#fffeee"
-		 	        android:textSize="24sp" />
-		
-		 	    <!-- Contest Details: Details (label) -->	
-		 	    <TextView
-		 	        android:id="@+id/lbl_details"
-		 	        android:layout_width="wrap_content"
-		 	        android:layout_height="60dp"
-		 	        android:layout_alignParentRight="true"
-		 	        android:paddingTop="3dp"
-		 	        android:text="DETAILS"
-		 	        android:textColor="#4ECDC4"
-		 	        android:textSize="20sp" />
-		
-		 	    <!-- Contest Details: rect Banner -->	
-		    	<ImageView android:id="@+id/iv_rectBanner"
-					android:layout_width="match_parent"
-					android:layout_height="120dp"
-					android:layout_below="@id/tv_contestName2"
-					android:scaleType="fitXY"/>
-		
-		 	    <!-- Contest Details: winnerNums -->	
-		 	    <TextView
-		 	        android:id="@+id/tv_winnerNums"
-		 	        android:layout_width="match_parent"
-		 	        android:layout_height="60dp"
-					android:layout_below="@id/iv_rectBanner"
-		 	        android:gravity="center"
-		 	        android:textColor="#777777" 
-		 	        android:textSize="20sp"/>
-		
-		 	    <!-- Contest Details: Description -->	
-		 	    <TextView
-		 	        android:id="@+id/tv_description"
-		 	        android:layout_width="match_parent"
-		 	        android:layout_height="60dp"
-					android:layout_below="@id/tv_winnerNums"
-		 	        android:paddingBottom="2dp"
-		 	        android:textColor="#ffffff" />
-		</RelativeLayout>
-	
-		<LinearLayout
-			android:id="@+id/img_rulesView"
-	        android:tag="backRuleView"
-			android:orientation="vertical"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-	    	android:background="@drawable/layout_border">
-				<ImageView android:id="@+id/img_test"
-		               android:layout_width="150dp"
-		               android:layout_height="300dp"
-		               android:src="@drawable/test"
-		               android:scaleType="fitXY"/>
-		 	   
-		</LinearLayout>
-	</RelativeLayout>
-	
-	<LinearLayout
-		android:id="@+id/img_frontView"
-        android:tag="frontView"
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:background="@android:color/black">
-        <!--   	@drawable/background_front-->
-	    <FrameLayout 
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content" >
-	    	<ImageView android:id="@+id/img_item"
-	               android:minHeight="300dp"
-	               android:layout_width="match_parent"
-	               android:layout_height="match_parent"
-	               android:scaleType="fitXY"/>
-	    	
-	    	<RelativeLayout
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:minHeight="240dp">
-		        
-		        <!-- Contest: Cash Value -->
-		        <TextView
-		            android:id="@+id/tv_cashValue"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentLeft="true"
-		        	android:layout_marginLeft="5dp"
-		        	android:layout_marginTop="3dp"
-		            android:textColor="#fffeee"
-		            android:textSize="24sp" />
-		        
-		        <!-- Contest: Winner Reward -->
-		        <TextView
-		            android:id="@+id/tv_winnerReward"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_toRightOf="@id/tv_cashValue"
-		        	android:layout_marginLeft="2dp"
-		        	android:layout_marginTop="3dp"
-		            android:textColor="#fffeee"
-		            android:textSize="24sp" />
-		              
-		        <!-- Contest: Name -->
-		        <TextView
-		            android:id="@+id/tv_contestName"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_below="@id/tv_cashValue"
-		        	android:layout_marginLeft="5dp"
-		            android:textColor="#fffeee"
-		            android:textSize="20sp" />
-		        
-		        <!-- Contest: Coin amount -->
-		        <TextView
-		            android:id="@+id/tv_contestCoin"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="5dp"
-		            android:textColor="#fff000" />
-		        
-		        <!-- Contest: Coin icon -->
-		        <TextView
-		            android:id="@+id/icon_contest_coin"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="2dp"
-		        	android:paddingBottom="2dp"
-		        	android:layout_toRightOf="@id/tv_contestCoin"
-		            android:textColor="#fff000"
-		            android:text="@string/fa_coin" />
-		        
-		        <!-- Contest: Begin date -->
-		        <TextView
-		            android:id="@+id/tv_beginDate"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="4dp"
-		        	android:layout_toRightOf="@id/icon_contest_coin"
-		            android:textColor="#FA023C" />
-		        
-		        <!-- Contest: Clock icon -->
-		        <TextView
-		            android:id="@+id/icon_clock"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="2dp"
-		        	android:paddingBottom="2dp"
-		        	android:layout_toRightOf="@id/tv_beginDate"
-		            android:textColor="#FA023C"
-		            android:text="@string/fa_clock" />
-		        
-		        <!-- Contest: Total colabration number -->
-		        <TextView
-		            android:id="@+id/tv_colabrationNumber"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="4dp"
-		        	android:layout_toRightOf="@id/icon_clock"
-		            android:textColor="#fffeee" />
-		        
-		        <!-- Contest: Colabration icon -->
-		        <TextView
-		            android:id="@+id/icon_colabration"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="2dp"
-		        	android:paddingBottom="1dp"
-		        	android:layout_toRightOf="@id/tv_colabrationNumber"
-		            android:textColor="#fffeee"
-		            android:text="@string/fa_users" />
-		        
-		        <!-- Contest: Map mark icon -->
-		        <TextView
-		            android:id="@+id/icon_location"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_marginLeft="5dp"
-		        	android:paddingBottom="1dp"
-		        	android:layout_toRightOf="@id/icon_colabration"
-		            android:textColor="#fffeee"
-		            android:text="@string/fa_map_mark" />
-		        
-		        <!-- Contest: Camera icon -->
-		        <TextView
-		            android:id="@+id/icon_camera"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		        	android:layout_alignParentBottom="true"
-		        	android:layout_alignParentRight="true"
-		            android:textColor="#4ECDC4"
-		            android:textSize="30sp"
-		            android:text="@string/fa_camera" />
-	 
-		    </RelativeLayout>
-	    </FrameLayout>
-	    
-	    <ProgressBar android:id="@+id/img_pb"
-	                 android:layout_width="fill_parent"
-	                 android:layout_height="2dp"
-	                 style="?android:attr/progressBarStyleHorizontal"/>
-	</LinearLayout>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/h_scrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:scrollbars="none">
 
-</FrameLayout>
+	<LinearLayout
+		style="@style/BothMP.LayoutNoBorder" >
+
+        <!-- rules view -->
+        <RelativeLayout
+            android:id="@+id/img_rulesView"
+            android:tag="rulesView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/img_rulesView">
+			<RelativeLayout 
+			    style="@style/BothMP"
+			    android:background="@drawable/layout_border">
+			    <TextView
+	             	android:id="@+id/tv_rulesHeader"
+	                style="@style/tv_rulesHeader" />
+	            <TextView
+	                android:id="@+id/tv_rulesHeaderDetails"
+	                style= "@style/tv_rulesHeaderDetails" />
+	            <View  
+	                android:id="@+id/rules_divider1"
+	                android:layout_below="@id/tv_rulesHeader"
+	                style="@style/Divider"/>
+	
+	            <TextView
+	                android:id="@+id/tv_rulesBody"
+	                android:layout_below="@id/rules_divider1"
+	                android:text="After 37 years in business, authorized AT&amp;T retailer, Communications Electronics knows a thing about outfitting its customers with the latest in mobile phone and wireless equipment, new smart phones, and accessories."
+	                style="@style/tv_rulesBody" />
+			</RelativeLayout>
+            
+        </RelativeLayout>
+	
+        <!-- main view -->
+        <FrameLayout
+        	android:id="@+id/img_mainView"
+        	style="@style/img_mainView"  >
+
+            <RelativeLayout 
+			    style="@style/BothMP"
+			    android:background="@drawable/layout_border">
+	            <FrameLayout
+	                android:id="@+id/frame_img_item"
+	                style="@style/BothMP" >
+		            <ImageView
+		                android:id="@+id/img_item"
+						style="@style/img_item" />
+		            <ImageView
+		                android:id="@+id/img_item_mask"
+						style="@style/img_item_mask" />
+		        </FrameLayout>
+	
+	            <RelativeLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:minHeight="240dp" >
+	
+	                <!-- Contest: Cash Value -->
+	                <TextView
+	                    android:id="@+id/tv_cashValue"
+	                    style="@style/tv_cashValue" />
+	
+	                <!-- Contest: Winner Reward -->
+	                <TextView
+	                    android:id="@+id/tv_winnerReward"
+	                    android:layout_toRightOf="@id/tv_cashValue"
+	                    style="@style/tv_winnerReward" />
+	
+	                <!-- Contest: Name -->
+	                <TextView
+	                    android:id="@+id/tv_contestName"
+	                    android:layout_below="@id/tv_cashValue"
+						style="@style/tv_contestName"/>
+	                
+	                <!-- Contest: Coin amount -->
+	                <TextView
+	                    android:id="@+id/tv_contestCoin"
+						style="@style/tv_contestCoin" />
+	                
+	                <!-- Contest: Coin icon -->
+	                <TextView
+	                    android:id="@+id/icon_contest_coin"
+	                    android:layout_toRightOf="@id/tv_contestCoin"
+						style="@style/icon_contest_coin" />
+	
+	                <!-- Contest: Begin date -->
+	                <TextView
+	                    android:id="@+id/tv_beginDate"
+	                    android:layout_toRightOf="@id/icon_contest_coin"
+						style="@style/tv_beginDate" />
+	                
+	                <!-- Contest: Clock icon -->
+	                <TextView
+	                    android:id="@+id/icon_clock"
+	                    android:layout_toRightOf="@id/tv_beginDate"
+						style="@style/icon_clock" />
+	
+	                <!-- Contest: Total colabration number -->
+	                <TextView
+	                    android:id="@+id/tv_colabrationNumber"
+	                    android:layout_toRightOf="@id/icon_clock"
+						style="@style/tv_colabrationNumber" />
+	                
+	                <!-- Contest: Colabration icon -->
+	                <TextView
+	                    android:id="@+id/icon_colabration"
+	                    android:layout_toRightOf="@id/tv_colabrationNumber"
+						style="@style/icon_colabration" />
+	
+	                <!-- Contest: Map mark icon -->
+	                <TextView
+	                    android:id="@+id/icon_location"
+	                    android:layout_toRightOf="@id/icon_colabration"
+						style="@style/icon_location" />
+	
+	                <!-- Contest: Camera icon -->
+	                <TextView
+	                    android:id="@+id/icon_camera"
+						style="@style/icon_camera" />
+	            </RelativeLayout>
+	       </RelativeLayout>
+        </FrameLayout>
+	
+        <!-- details view -->
+        <RelativeLayout
+            android:id="@+id/img_detailsView"
+            android:tag="detailsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/img_detailsView" >
+
+            <RelativeLayout 
+			    style="@style/BothMP"
+			    android:background="@drawable/layout_border">
+            	<!-- Contest Details: Contest Name -->
+	            <LinearLayout
+	                	android:id="@+id/ll_contestNameRow"
+	        			android:layout_width="300dp"
+	        			android:layout_height="wrap_content">
+		            <TextView
+		                android:id="@+id/tv_contestName2"
+		            	style="@style/tv_contestName2" />
+		
+		            <!-- Contest Details: Details (label) -->
+		            <TextView
+		                android:id="@+id/lbl_details"
+		            	style="@style/lbl_details"  />
+		        </LinearLayout>
+	
+	            <View 
+	                android:id="@+id/details_divider1"
+	                android:layout_below="@id/ll_contestNameRow"
+	                style="@style/Divider"/>
+	                        
+	            <!-- Contest Details: rect Banner -->
+	
+	            <FrameLayout
+	                android:id="@+id/frame_rectBanner"
+	                android:layout_below="@id/details_divider1"
+	                style="@style/frame_rectBanner" >
+	                <ImageView
+	                    android:id="@+id/iv_rectBanner"
+	                    style="@style/iv_rectBanner"/>
+	                <ImageView
+	                    android:id="@+id/iv_rectBanner_mask"
+	                    style="@style/iv_rectBanner_mask"/>
+	            </FrameLayout>
+	
+	            <View 
+	                android:id="@+id/details_divider2"
+	                android:layout_below="@id/frame_rectBanner"
+	                style="@style/Divider"/>
+	            
+	            <!-- Contest Details: winnerNums -->
+	            <LinearLayout
+	                android:id="@+id/row_winnerNums"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center"
+	                android:layout_below="@id/details_divider2">
+	                <TextView
+	                    android:id="@+id/icon_winnerNums"
+	                    style="@style/icon_winnerNums"/>
+	                <TextView
+	                    android:id="@+id/tv_winnerNums"
+	                    style="@style/tv_winnerNums"/>
+		        </LinearLayout>
+	
+	            <View 
+	                android:id="@+id/details_divider3"
+	                android:layout_below="@id/row_winnerNums"
+	                style="@style/Divider"/>
+	            
+	            <!-- Contest Details: Description -->
+	            <TextView
+	                android:id="@+id/tv_description"
+	                android:layout_below="@id/details_divider3"
+	            	style="@style/tv_description" />
+	        </RelativeLayout>    
+        </RelativeLayout>
+        
+	</LinearLayout>
+</HorizontalScrollView>

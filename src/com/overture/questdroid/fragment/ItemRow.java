@@ -21,6 +21,9 @@ public class ItemRow {
 	private String winnerNums;
 	private String description;	
 	
+	// Rules
+	private String ruleDescription;
+	
 	public ItemRow(ItemRow row){
 		super();
 		this.imgSrc = row.getCashValue();
@@ -34,11 +37,12 @@ public class ItemRow {
 //		this.rectBanner = row.getRectBanner();
 		this.winnerNums = row.getWinnerNums();
 		this.description = row.getDescription();
+		this.ruleDescription = row.getRuleDescription();
 	}
 	
 	public ItemRow(String imgSrc, String cashValue, String winnerReward, String contestName, 
 				String contestCoin, String beginDate, String colabrationNumber, 
-				String rectBanner, String winnerNums, String description) {
+				String rectBanner, String winnerNums, String description, String ruleDescription) {
 		super();
 		this.imgSrc = imgSrc;
 		this.cashValue = cashValue;
@@ -51,6 +55,7 @@ public class ItemRow {
 		this.rectBanner = rectBanner;
 		this.winnerNums = winnerNums;
 		this.description = description;
+		this.ruleDescription = ruleDescription;
 	}
 
 	public String getImgSrc() {
@@ -131,6 +136,14 @@ public class ItemRow {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getRuleDescription() {
+		return ruleDescription;
+	}
+
+	public void setRuleDescription(String ruleDescription) {
+		this.ruleDescription = ruleDescription;
 	}
 
 }

@@ -15,8 +15,8 @@ import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
 import com.lidroid.xutils.bitmap.callback.DefaultBitmapLoadCallBack;
 import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
-
-import com.overture.questdroid.fragment.ContestsFragment;;
+import com.overture.questdroid.fragment.ContestsFragment;
+import com.overture.questdroid.utility.BitmapHelp;
 
 /**
  * Author: xUtils
