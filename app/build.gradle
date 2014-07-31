@@ -1,0 +1,60 @@
+apply plugin: 'android'
+apply plugin: 'robolectric'
+
+android {
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 19
+        versionCode 2
+        versionName '1.0.0-SNAPSHOT'
+        testInstrumentationRunner 'com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner'
+    }
+    buildTypes {
+        release {
+            runProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets {
+        androidTest {
+            setRoot('src/test')
+        }
+    }
+    productFlavors {
+    }
+}
+
+robolectric {
+    include '**/*Test.class'
+}
+
+dependencies {
+    androidTestCompile 'junit:junit:4.11'
+    androidTestCompile files('libs/testrunner-1.1.jar')
+    androidTestCompile files('libs/testrunner-runtime-1.1.jar')
+    androidTestCompile 'com.google.guava:guava:14.0.1'
+    androidTestCompile 'com.squareup.dagger:dagger:1.1.0'
+    androidTestCompile 'org.hamcrest:hamcrest-integration:1.1'
+    androidTestCompile 'org.hamcrest:hamcrest-core:1.1'
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.1'
+    androidTestCompile 'org.robolectric:robolectric:2.3'
+    androidTestCompile 'com.squareup:fest-android:1.0.+'
+    compile 'com.android.support:support-v4:20.0.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        testOutputDir = file('build/test-classes/debug')
+    }
+}
